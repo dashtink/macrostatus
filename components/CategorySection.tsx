@@ -16,8 +16,8 @@ export function CategorySection({
     <AccordionItem value={category.category}>
       <AccordionTrigger>
         <div className="flex flex-1 flex-wrap items-center justify-between gap-2 pr-2">
-          <span>{category.label}</span>
-          <div className="flex gap-1.5 text-xs">
+          <span className="font-mono text-xs uppercase tracking-wide">{category.label}</span>
+          <div className="flex gap-1.5 font-mono text-xs">
             {bullish > 0 && (
               <Badge className="bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">{bullish} bullish</Badge>
             )}

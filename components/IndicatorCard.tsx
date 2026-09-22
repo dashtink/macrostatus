@@ -34,19 +34,19 @@ export function IndicatorCard({ indicator }: { indicator: Indicator }) {
       </div>
 
       {indicator.isPlaceholder ? (
-        <Badge variant="outline" className="w-fit text-xs">
+        <Badge variant="outline" className="w-fit font-mono text-xs">
           Manual — coming soon
         </Badge>
       ) : (
         <>
-          <div className="text-2xl font-semibold tabular-nums">{indicator.displayValue}</div>
+          <div className="font-mono text-2xl font-semibold tabular-nums">{indicator.displayValue}</div>
           <p className="text-muted-foreground text-sm">{indicator.rationale}</p>
           {indicator.source.url && (
             <a
               href={indicator.source.url}
               target="_blank"
               rel="noreferrer"
-              className="text-muted-foreground hover:text-foreground mt-auto flex items-center gap-1 text-xs"
+              className="text-muted-foreground hover:text-foreground mt-auto flex items-center gap-1 font-mono text-xs"
             >
               {indicator.source.name}
               <ExternalLink className="size-3" />

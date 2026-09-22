@@ -23,7 +23,7 @@ export default async function DashboardPage() {
         ))}
       </Accordion>
 
-      <p className="text-muted-foreground pb-4 text-center text-xs">
+      <p className="text-muted-foreground pb-4 text-center font-mono text-xs">
         Generated {new Date(data.generatedAt).toLocaleString()} — see{' '}
         <Link href="/architecture" className="underline">
           how this is built
