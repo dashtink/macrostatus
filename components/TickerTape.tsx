@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 
 const SYMBOLS = [
   { proName: 'AMEX:SPY', title: 'SPY' },
-  { proName: 'CBOE:VIX', title: 'VIX' },
+  { proName: 'TVC:VIX', title: 'VIX' },
   { proName: 'NASDAQ:TLT', title: 'TLT' },
   { proName: 'TVC:DXY', title: 'DXY' },
   { proName: 'TVC:USOIL', title: 'WTI' },

@@ -45,7 +45,7 @@ export function RegimeHero({ composite }: { composite: CompositeRegime }) {
     <div className={heroVariants({ regime: composite.regime })}>
       <span className={pillVariants({ regime: composite.regime })}>
         <span className={dotVariants({ regime: composite.regime })} aria-hidden />
-        Live regime monitor
+        Macroeconomic monitor
       </span>
 
       <div className="mt-3 flex flex-wrap items-baseline justify-between gap-2">
