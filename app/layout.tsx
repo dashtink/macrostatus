@@ -14,9 +14,21 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "macrostatus — Regime Monitor",
+  title: "macrostatus — Macroeconomic Monitor",
   description:
-    "A live macro/market regime monitor for equity risk — the kind of glanceable read a capital-markets risk desk keeps open.",
+    "A live macroeconomic monitor for equity risk — the kind of glanceable read a capital-markets risk desk keeps open.",
+  openGraph: {
+    title: "macrostatus — Macroeconomic Monitor",
+    description:
+      "A live macroeconomic monitor for equity risk — the kind of glanceable read a capital-markets risk desk keeps open.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "macrostatus — Macroeconomic Monitor",
+    description:
+      "A live macroeconomic monitor for equity risk — the kind of glanceable read a capital-markets risk desk keeps open.",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

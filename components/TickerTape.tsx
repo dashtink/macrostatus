@@ -19,13 +19,18 @@ const SYMBOLS = [
  */
 export function TickerTape() {
   const containerRef = useRef<HTMLDivElement>(null)
+  // Tracks whether the script has already been injected. React 19 Strict Mode
+  // double-invokes effects (mount → cleanup → mount); a ref survives that
+  // cycle where a childElementCount check does not, because the inner widget
+  // div is always present as child[0] before the script is appended.
+  const mountedRef = useRef(false)
 
   useEffect(() => {
+    if (mountedRef.current) return
     const container = containerRef.current
-    // React 19 Strict Mode double-invokes effects in dev (mount → cleanup →
-    // mount) — without this guard the script gets appended twice, rendering
-    // two overlapping widget instances.
-    if (!container || container.childElementCount > 1) return
+    if (!container) return
+
+    mountedRef.current = true
 
     const script = document.createElement('script')
     script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js'
@@ -39,11 +44,6 @@ export function TickerTape() {
       locale: 'en',
     })
     container.appendChild(script)
-
-    // Deliberately no cleanup that clears the container: TradingView's script
-    // injects its own iframe asynchronously, and wiping innerHTML on unmount
-    // races with that (throws in React 19 Strict Mode's dev-only double
-    // mount/unmount). This component only ever mounts once per page anyway.
   }, [])
 
   return (
